@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <style>
+*
+ {
+ margin: 0;
+ padding: 0;
+ font-family: sans-serif;
+        
+}
+.main
+{
+height: 100vh;
+width: 100%;
+background-image: url(./originalgirl.gif);
+/* background-image:linear-gradient(rgba(255,255,255,.4),rgba(255,255,255,.1)), url(./giphy.gif); */
+
+background-size: 100% 100%;
+position: relative;
+justify-content: center;
+align-items: center;
+display: flex;
+
+}
+.div
+{
+height: 250px;
+width: 700px;
+/* border: 1px solid cyan; */
+display: flex;
+position: relative;
+
+justify-content: space-evenly;
+}
+
+.ddiv
+{
+height: 60%;
+width: 22%;
+margin-top:13%;
+background-color:black;
+opacity: 0.8;
+border-radius: 10px;
+display: flex;
+color: white;
+justify-content: space-evenly;
+align-items: center;
+flex-direction: column;
+}
+.hdiv
+{
+height: 60%;
+width: 22%;
+margin-top:13%;
+background-color:black;
+opacity: 0.8;
+border-radius: 10px;
+
+color: white;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+flex-direction: column;
+}
+.mdiv
+{
+height: 60%;
+width: 22%;
+margin-top:13%;
+border-radius: 10px;
+
+background-color:black;
+opacity: 0.8;
+color: white;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+flex-direction: column;
+}
+.sdiv
+{
+height: 60%;
+width: 22%;
+margin-top:13%;
+background-color:black;
+opacity: 0.8;
+color: white;
+display: flex;
+border-radius: 10px;
+
+justify-content: space-evenly;
+align-items: center;
+flex-direction: column;
+        
+}
+
+h2
+{
+font-size: 35px;
+}
+p
+{
+font-size: 60px;
+}
+h1
+{
+font-size: 50px;
+position: absolute;
+color: white;
+font-style: oblique;
+/* font-family: sans-serif; */
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+color: aliceblue;
+justify-content: center;
+font-weight: bold;
+/* font-size: 40px; */
+text-align: center;
+}
+b
+{
+/* color: rgb(255, 0, 0); */
+font-family: 'Courier New', Courier, monospace;
+
+transform: rotate(30deg);
+transition-duration: 2s;
+
+border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+ </style>
+</head>
+<body>
+
+ <div class="main">
+<div class="div">
+
+ <h1>Countdown <b>Timer</b></h1>
+
+<div class="ddiv"></div>
+<div class="hdiv"></div>
+<div class="mdiv"></div>
+<div class="sdiv"></div>
+</div>
+
+
+ </div>
+
+</body>
+<script>
+
+
+var ddiv=document.getElementsByClassName("ddiv")[0]
+    var hdiv=document.getElementsByClassName("hdiv")[0]
+    var mdiv=document.getElementsByClassName("mdiv")[0]
+    var sdiv=document.getElementsByClassName("sdiv")[0]
+
+
+
+    function timer(){
+
+    var next=new Date("14 january 2024")
+    var currentdate=new Date()
+
+    var totalmilliseconds=(next-currentdate)/1000
+
+    var second= Math.floor(totalmilliseconds % 60)
+    var minute= Math.floor(totalmilliseconds/60)%60
+    var hour= Math.floor(totalmilliseconds/3600)%24
+    var day= Math.floor(totalmilliseconds/3600/24)
+
+
+    ddiv.innerHTML=`<h2>Days</h2>  <p>${zero(day)}</p>`
+    hdiv.innerHTML=`<h2>Hours</h2>  <p>${zero(hour)}</p>`
+    mdiv.innerHTML=`<h2>Minutes</h2>  <p>${zero(minute)}</p>`
+    sdiv.innerHTML=`<h2>Seconds</h2>  <p>${zero(second)}</p>`
+
+
+
+    }
+
+    setInterval(timer,1000)
+
+    timer();
+
+    function zero(e){
+        return e<10 ? `0${e}` : e
+    }
+
+
+
+
+
+
+
+</script>
+
+</html>
+
+<!-- ..................................................................................................................... -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timer</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        
+        }
+        .main
+        {
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+            background-color: black;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-image: url(./pic1.gif);
+            background-size: 100% 100%;
+        }
+        .child
+        {
+            height: 66vh;
+            position: relative;
+            width: 70vw;
+            /* box-shadow: 2px 2px 10px 2px blue; */
+            background-size: 100% 100%;
+            /* padding: 5px; */
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        h1
+        {
+            font-size: 50px;
+            position: absolute;
+            top: 5vh;
+            width: 100%;
+            text-align: center;
+        }
+        .ddiv
+        {
+            height: 20vh;
+            width: 15vw;
+            box-shadow: 2px 2px 10px 2px black;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+        }
+        .hdiv
+        {
+            height: 20vh;
+            width: 15vw;
+            box-shadow: 2px 2px 10px 2px black;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+        }
+        .mdiv
+        {
+            height: 20vh;
+            width: 15vw;
+            box-shadow: 2px 2px 10px 2px black;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+        }
+        .sdiv
+        {
+            height: 20vh;
+            width: 15vw;
+            box-shadow: 2px 2px 10px 2px black;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+        }
+        h2
+        {
+            font-size: 48px;
+        }
+        p
+        {
+            font-size: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="child">
+            <h1>Countdown Timer</h1>
+            <div class="ddiv"></div>
+            <div class="hdiv"></div>
+            <div class="mdiv"></div>
+            <div class="sdiv"></div>
+        </div>
+    </div>
+</body>
+
+<script>
+
+
+</script>
+</html>
+ -->
+
+
+
+
+
